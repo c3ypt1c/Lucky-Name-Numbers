@@ -1,72 +1,48 @@
-def inputi(*whatsay): #This doesn't need to be there. I just like it here.
-    while True:
-        try:
-            return input ( whatsay[0] )
-            break
-        except IndexError:
-            whatsay = ( "> ", )
-        except KeyboardInterrupt:
-            print ( "" )
-            return None
-        except:
-            print ( Exception )
- 
-letters = { "a": 1, #A dictionary.
-            "j": 1, #It has a number attatched to a string
-            "s": 1, #If "s" will be called, 1 will be returned.
-            "b": 2, #You call using varable[letter]
-            "k": 2, #For example, on the IDLE shell,
-            "t": 2, #>>> a = letters["a"]
-            "c": 3, #>>> a
-            "l": 3, #1
-            "u": 3, #>>> h = letters["h"]
-            "d": 4, #>>> a + h
-            "m": 4, #9
-            "v": 4,
-            "e": 5,
-            "n": 5,
-            "w": 5,
-            "f": 6,
-            "o": 6,
-            "x": 6,
-            "g": 7,
-            "p": 7,
-            "y": 7,
-            "h": 8,
-            "q": 8,
-            "z": 8,
-            "i": 9,
-            "r": 9 }
- 
-number = [ None,                                #0 (nothing since 0 doesn't exist)
-           "Natural Leaders",                   #1
-           "Natural peacemakers",               #2
-           "Creative and optimistic",           #3
-           "Hard workers",                      #4
-           "Value Freedom",                     #5
-           "Carers and providers",              #6
-           "Thinkers",                          #7
-           "Have diplomatic skills",            #8
-           "Selfless and generous"              #9
-           ]
- 
-while True:
-    sums = 0
-    for x in inputi().lower().split(" "):       #Use input("> ") if inputi is not defined.
-        for y in x:
-            sums += letters[y]
- 
-    while True:
-        array = []
-        sums = str ( sums )
-        if len ( sums ) == 1:                   #If the number is chosen, the loop will break
-            sums = int ( sums )
-            break
-        for x in sums: array.append( int ( x )) #Adds all numbers into an array 
-        sums = 0
-        for x in array:
-            sums += int ( x )                   #Adds all the numbers from the array together. 
- 
-    print ( number[sums] )
 
-    
+# WJEC Controlled Asessment
+# Luck Name Numbers 2016
+# Python 3.3.2
+
+# Python list for letters, valuex, meanings (will be used later)
+letters = [" ","-","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+value =   [0,0,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8]
+meaning = ["Natural leadders","Natural peacemakers","Creative and optimistic","Hard worker","Value freedom","Carers and providers","Thinkers","Have diplomatic skills","Selfless and generous"]
+# Assigns the first name to a varible
+firstname = input("Please enter your, first name: ").lower()
+
+# Assigns the sure name to a varible 
+surname = input("Please enter your, surname: ").lower()
+
+# Values for first name and surname will be used to find the person lucky name numbers
+totalFirstname = 0
+totalSurname = 0
+totalName = 0
+nameMeaning = 0
+
+# Changes letters to corresponding value in firstname
+for letter in firstname:
+    num = letters.index(letter)
+    totalFirstname = (value [num])
+# Changes letters to corresponding value in surname
+for letter in surname:
+    num = letters.index(letter)
+    totalSurname = (value [num])
+
+# Prints total first name value
+print ("The value of your Firstname is: ", totalFirstname)
+# Prints total sur name value
+print ("The value of your Surname is: ", totalSurname)
+# Adds up total firstname and total surname together
+totalName = int(totalFirstname) + int(totalSurname)
+totalName = int(totalFirstname) + int(totalSurname)
+if len(str(totalName)) > 1:
+    totalNameA = str(totalName)[-1:]
+    totalNameB = str(totalName)[:1]
+    totalNameE = int(totalNameA) + int(totalNameB)
+    print("The value for your full name is", totalNameE)
+else:
+    print("The value for your full name is", totalName)
+    nameMeaning = int(totalName) -1
+    print ("Your lucky name meaning is: ",meaning[nameMeaning])
+
+
