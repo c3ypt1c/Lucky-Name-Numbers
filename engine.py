@@ -23,13 +23,13 @@ totalSurname = 0
 totalName = 0
 nameMeaning = 0
 # Changes letters to corresponding value in firstname
-for letter in firstName:
+for letter in firstname:
     num = letters.index(letter)
-    totalFirstname = += (value [num])
+    totalFirstname += (value [num])
 # Changes letters to corresponding value in surname
-for letter in surName:
+for letter in surname:
     num = letters.index(letter)
-    totalSurname =  += (value [num])
+    totalSurname += (value [num])
 # Prints total first name value
 print("The value of your Firstname is: ", totalFirstname)
 # Prints total sur name value
