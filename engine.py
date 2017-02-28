@@ -21,7 +21,7 @@ print(" o----------------------------------------------------------------o\n")
 firstName = input("Please enter your, first name: ").lower()
 # Assigns the sure name to a varible 
 surName = input("Please enter your, surname: ").lower()
-print("Is your name" ,firstName ,surName," If so wait six seconds if not retun the code")
+##print("Is your name" ,firstName ,surName," If so wait six seconds if not retun the code")
 ## time.sleep( 6 ) #What's the point of this?
 # Values for first name and surname will be used to find the person lucky name numbers
 totalFirstname = 0
