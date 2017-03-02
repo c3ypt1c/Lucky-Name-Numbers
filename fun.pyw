@@ -15,12 +15,8 @@ class values:
     value =   [0,0,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8]
     meaning = ["Natural leadders","Natural peacemakers","Creative and optimistic","Hard worker","Value freedom","Carers and providers","Thinkers","Have diplomatic skills","Selfless and generous"]
 
-#A function accepting "name" as a varable from caller.
-def calc(name):
-    #If a person has more than just a surname and a first name, split into multiple strings.
-    fullname = name.lower().split(" ")
-    # total value of the name
-    total = 0
+def totalVal(fullname):
+    total = 0;
     #For exery name in full name...
     for name in fullname:
         #and for every letter in each name...
@@ -28,10 +24,14 @@ def calc(name):
             #add to the total value...
             total += (values.value [values.letters.index(letter)])
             #Note: values is the class and the "." means 'from' so values.value would mean 'from values get value'
+    return total;
+#A function accepting "name" as a varable from caller.
+def calc(name):
+    #If a person has more than just a surname and a first name, split into multiple strings.
     #Adds to the total value.
-    total = adder(total)
+    total = adder(totalVal(name.lower().split(" ")))
     #prints total value of the full name for debug
-    print("The value for your full name is", total)
+    print("The value for your full name is", totalVal(name.lower().split(" ")))
     #Prints lucky name meaning for debug
-    print ("Your lucky name meaning is: ", values.meaning[total-1])
+    print("Your lucky name meaning is: ", values.meaning[total-1])
     return values.meaning[total-1]
