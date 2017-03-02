@@ -3,8 +3,8 @@
 # Python 3.3.2/3.5.2
 # Import Time function
 import tkinter
-# Import engine's functions
-import engine
+# Import fun's functions as engine (for lagacy)
+import fun as engine
 #Function for setting the meaning of the name to a label.
 def calc():
     global textbox, nametext;
